@@ -29,7 +29,7 @@ class BG(pygame.sprite.Sprite):
 class Ground(pygame.sprite.Sprite):
     def __init__(self, groups, scale_factor):
         super().__init__(groups)
-        self.sprite_type = 'ground'
+        self.sprite_type = 'obstacle'
 
         
         # imade

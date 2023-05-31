@@ -25,7 +25,7 @@ class Game:
         # sprite setup
         BG(self.all_sprites, self.scale_factor)
         Ground(self.all_sprites, self.scale_factor)
-        self.plane = Plane(self.all_sprites, self.scale_factor / 2.5)
+        self.plane = Plane(self.all_sprites, self.scale_factor / 2)
 
         # timer
         self.obstacle_timer = pygame.USEREVENT + 1
@@ -46,6 +46,9 @@ class Game:
             for sprite in self.collision_sprites.sprites():
                 if sprite.sprite_type == 'obstacle':
                     sprite.kill()
+            self.active = False
+            self.plane.kill()
+        if self.plane.rect.top >= self.display_surface.get_height() - 50:
             self.active = False
             self.plane.kill()
 
